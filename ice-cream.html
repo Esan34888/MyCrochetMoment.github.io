@@ -301,7 +301,7 @@
         <div>
             <a href="index.html">Home</a>
             <div class="dropdown">
-                <a href="#crochet-time" class="dropbtn" onclick="toggleDropdown(event)">Crochet Time <i class="bi bi-caret-down-fill"></i></a>
+                <a href="index.html#crochet-time" class="dropbtn" onclick="toggleDropdown(event)">Crochet Time <i class="bi bi-caret-down-fill"></i></a>
                 <div class="dropdown-content" id="dropdownMenu">
                     <a href="badmintonball.html">Badminton Ball</a>
                     <a href="carnation.html">Carnation Flower</a>
@@ -398,21 +398,7 @@
         </div>
         © 2025 by MyCrochetMoment. All rights reserved.
     </div>
-    <script>
-        function toggleDropdown(event) {
-            event.preventDefault();
-            const dropdown = event.currentTarget.nextElementSibling;
-            dropdown.classList.toggle("show");
-    
-            // Close if clicking outside
-            document.addEventListener("click", function closeDropdown(e) {
-                if (!event.currentTarget.contains(e.target) && !dropdown.contains(e.target)) {
-                    dropdown.classList.remove("show");
-                    document.removeEventListener("click", closeDropdown);
-                }
-            });
-        }
-    </script>
+  
     <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-X4E1EKS3MN"></script>
 <script>
