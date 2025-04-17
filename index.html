@@ -9,7 +9,8 @@
     for both beginners and seasoned crafters to enjoy and grow their skills." />
     <meta name="keywords" content="crochet, Learning crochet, tutorial crochet, crochet projects, teaching crochet, handmade crochet, 
     my crochet moment, MyCrochetMoment, winnie the pooh crochet, badminton Ball crochet, carnation flower crochet, about crochet, 
-    art of crochet, crochet time" />
+    ice-cream cone crochet, ice cream crochet, art of crochet, crochet time" />
+    <meta name="robots" content="index, follow" />
     <meta name="author" content="Eesan Loo" />
     <title>My Crochet Moment | Homepage</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
@@ -225,46 +226,58 @@
         .icon-style i:hover{
             color:blue;
         }
-        @media screen and (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 20px;
-    }
+        /* Dropdown Container */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
 
-    .navbar .logo {
-        font-size: 24px;
-        margin-bottom: 10px;
-    }
+        /* Dropdown Button (link) */
+        .dropbtn {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+        }
 
-    .navbar div {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-    }
+        /* Dropdown Content (Hidden by Default) */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #111;
+            min-width: 180px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            top: 100%;
+            left: 0;
+            padding-top:10px;
+            border-radius: 4px;
+        }
 
-    .navbar a {
-        margin: 5px 0;
-    }
-    .main-section h1{
-        font-size:30px;
-}
-    .main-section p{
-        font-size:14;
-    }
-@media screen and (max-width: 768px) {
-    #about-us div {
-        flex-direction: column;
-    }
+        /* Dropdown Links */
+        .dropdown-content a {
+            color: white;
+            padding: 10px 16px;
+            text-decoration: none;
+            display: block;
+        }
 
-    #about-us img {
-        width: 80%;
-    }
+        /* Hover Effects */
+        .dropdown-content a:hover {
+            background-color: #333;
+        }
 
-    #about-us p {
-        text-align: center;
-    }
-}
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropbtn:hover {
+            color: grey;
+        }
+        .dropbtn i {
+            margin-left: 5px;
+            font-size: 12px;
+            vertical-align: middle;
+        }
 
     </style>
 </head>
@@ -274,7 +287,16 @@
         <div class="logo"><a href="index.html">MYCROCHETMOMENT</a></div>
         <div>
             <a href="index.html">Home</a>
-            <a href="#crochet-time">Crochet Time</a>
+            <div class="dropdown">
+                <a href="#crochet-time" class="dropbtn" onclick="toggleDropdown(event)">Crochet Time <i class="bi bi-caret-down-fill"></i></a>
+                <div class="dropdown-content" id="dropdownMenu">
+                    <a href="badmintonball.html">Badminton Ball</a>
+                    <a href="carnation.html">Carnation Flower</a>
+                    <a href="wtp.html">Winnie the Pooh</a>
+                    <a href="ice-cream.html">Ice-Cream Cone</a>
+                </div>
+            </div>
+            
             <a href="#about-us">About</a>
         </div>
     </div>
@@ -303,6 +325,8 @@
                 <a href="carnation.html"><img src="carnation1.png" alt="Carnation Flower Crochet"
                         class="slides"></a>
                 <a href="wtp.html"><img src="winniethepooh1.png" alt="Winnie the Pooh Crochet"
+                        class="slides"></a>
+                <a href="ice-cream.html"><img src="icecream1.png" alt="Ice Cream Cone Crochet"
                         class="slides"></a>
             </div>
             <a class="next" onclick="changeSlide(1)">&#10095;</a>
@@ -374,6 +398,21 @@
             });
         });
     </script>
+<script>
+    function toggleDropdown(event) {
+        event.preventDefault();
+        const dropdown = event.currentTarget.nextElementSibling;
+        dropdown.classList.toggle("show");
+
+        // Close if clicking outside
+        document.addEventListener("click", function closeDropdown(e) {
+            if (!event.currentTarget.contains(e.target) && !dropdown.contains(e.target)) {
+                dropdown.classList.remove("show");
+                document.removeEventListener("click", closeDropdown);
+            }
+        });
+    }
+</script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-X4E1EKS3MN"></script>
 <script>
