@@ -288,7 +288,58 @@
         padding: 8px;
     }
 }
+/* Dropdown Container */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
 
+        /* Dropdown Button (link) */
+        .dropbtn {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        /* Dropdown Content (Hidden by Default) */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #111;
+            min-width: 180px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            top: 100%;
+            left: 0;
+            padding-top:10px;
+            border-radius: 4px;
+        }
+
+        /* Dropdown Links */
+        .dropdown-content a {
+            color: white;
+            padding: 10px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        /* Hover Effects */
+        .dropdown-content a:hover {
+            background-color: #333;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropbtn:hover {
+            color: grey;
+        }
+        .dropbtn i {
+            margin-left: 5px;
+            font-size: 12px;
+            vertical-align: middle;
+        }
     </style>
 </head>
 
@@ -297,7 +348,15 @@
         <div class="logo"> <a href="index.html">MYCROCHETMOMENT</a></div>
         <div>
             <a href="index.html">Home</a>
-            <a href="index.html#crochet-time">Crochet Time</a>
+            <div class="dropdown">
+                <a href="index.html#crochet-time" class="dropbtn" onclick="toggleDropdown(event)">Crochet Time <i class="bi bi-caret-down-fill"></i></a>
+                <div class="dropdown-content" id="dropdownMenu">
+                    <a href="badmintonball.html">Badminton Ball</a>
+                    <a href="carnation.html">Carnation Flower</a>
+                    <a href="wtp.html">Winnie the Pooh</a>
+                    <a href="ice-cream.html">Ice-Cream Cone</a>
+                </div>
+            </div>
             <a href="index.html#about-us">About</a>
         </div>
     </div>
